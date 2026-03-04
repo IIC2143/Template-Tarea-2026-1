@@ -1,4 +1,4 @@
-name: "DCC Market CI Checks"
+name: "TienditaDCC CI Checks"
 
 on:
   push:
