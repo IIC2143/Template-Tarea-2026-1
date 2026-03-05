@@ -20,14 +20,14 @@ class Level4Test < ActionDispatch::IntegrationTest
         post "/buyers/#{@buyer1.id}/buy/#{@product3.id}"
         get "/buyers/favorite_country/#{@buyer1.id}"
         assert_response :success
-        favorite_country = json_response
+        favorite_country = json_response["favorite_country"]
         assert_equal "Chile", favorite_country
     end
 
     test "GET /total_profit" do # 0.2 punto
         get "/total_profit"
         assert_response :success
-        total_profit = json_response
+        total_profit = json_response["total_profit"]
         expected_profit = @product1.price + @product2.price + @product3.price + @product4.price
         assert_equal expected_profit, total_profit
     end

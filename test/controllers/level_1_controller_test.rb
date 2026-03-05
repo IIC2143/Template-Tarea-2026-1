@@ -9,7 +9,7 @@ class Level1Test < ActionDispatch::IntegrationTest
         @product3 = create(:products, name: "Coquita", description: "Refrescante bebida", price: 30, brand: @brand2)
     end
 
-    test "GET /products retorna todos los productos" do #0.2 punto
+    test "GET /products retorna todos los productos" do # 0.2 punto
         get "/products"
         assert_response :success
         products = json_response
