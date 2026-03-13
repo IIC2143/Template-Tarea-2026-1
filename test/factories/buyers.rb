@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :buyer do
-    sequence(:name) { |n| "Buyer_#{n}" }
+    sequence(:name) { |n| "Buyer #{n}" }
     sequence(:wallet) { |n| 1000 + n }
 
     trait :with_products do

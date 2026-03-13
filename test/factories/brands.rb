@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :brand do
-    sequence(:name) { |n| "Brand_#{n}" }
-    sequence(:country) { |n| "country_#{n}" }
+    sequence(:name) { |n| "Brand #{n}" }
+    sequence(:country) { |n| "Country #{n}" }
 
     trait :with_products do
       transient do

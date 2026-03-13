@@ -88,7 +88,9 @@ module ActiveSupport
         ActiveSupport::TestCase.feedback_message(@@total_score)
       )
       
-      report.generate(Rails.root.join("public", "test_report.html"))
+      report_path = Rails.root.join("public", "test_report.html")
+      FileUtils.mkdir_p(File.dirname(report_path))
+      report.generate(report_path)
     end
   end
 end

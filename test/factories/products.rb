@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :product do
     association :brand
+    association :buyer
     sequence(:name) { |n| "Product #{n}" }
     description { "Default product description" }
-    price { |n| 10 + n }
+    sequence(:price) { |n| 10 + n }
     available { true }
 
     trait :not_available do
